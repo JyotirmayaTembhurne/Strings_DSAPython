@@ -1,0 +1,15 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        length = len(s)
+        smap = dict.fromkeys(s, int())
+        tmap = dict.fromkeys(t, int())
+        for i in range(length):
+            smap[s[i]] = i
+        for i in range(length):
+            tmap[t[i]] = i
+        return (list(tmap.values()) == list(smap.values()))
+
+
+
+
+        
