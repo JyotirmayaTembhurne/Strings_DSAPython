@@ -1,0 +1,12 @@
+from typing import List
+
+def search(string: str, pattern: str) -> List[int]:
+    patlen = len(pattern)
+    strlen = len(string)
+    i = 0
+    ans = list()
+    while i + patlen <= strlen:
+        if string[i : i + patlen] == pattern:
+            ans.append(i + 1)
+        i += 1
+    return ans
