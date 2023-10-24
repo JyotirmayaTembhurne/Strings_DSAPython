@@ -1,0 +1,12 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        joined = str()
+        for char in s:
+            if char.isalnum():
+                if char.isalpha() and char.isupper():
+                    joined += char.lower()
+                else:
+                    joined += char
+        if joined == joined[-1::-1]:
+            return True
+        return False
