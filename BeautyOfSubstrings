@@ -1,0 +1,25 @@
+class Solution:
+    def beautySum(self, s: str) -> int:
+        substrs = list()
+        pair = list()
+        final = list()
+        length = len(s)
+        i, j = 0, length
+        while i < length:
+            temp = s[i:j]
+            if len(temp) > 2:
+                if len(set(temp)) > 1:
+                    substrs.append(temp)
+            if j == i:
+                i += 1
+                j = length
+            else:
+                j -= 1
+        for substring in substrs:
+            freq = dict.fromkeys(substring, int())
+            for char in substring:
+                freq[char] += 1
+            pair.append(sorted((freq.values())))
+        for subarr in pair:
+            final.append(subarr[-1] - subarr[0])
+        return sum(final)
