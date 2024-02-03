@@ -1,0 +1,14 @@
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        pairs = dict()
+        for x, y in paths:
+            pairs[x] = list()
+            pairs[y] = list()
+        for x, y in paths:
+            pairs[x].append(y)
+        for key, value in pairs.items():
+            if not value:
+                return key
+
+
+       
